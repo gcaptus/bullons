@@ -67,7 +67,10 @@ doctrine:
                     ApplicationSonataUserBundle: ~
                     ApplicationSonataMediaBundle: ~
                     SonataMediaBundle: ~
-
+                    ApplicationSonataNewsBundle: ~
+                    SonataNewsBundle: ~
+                    ApplicationSonataClassificationBundle: ~
+                    SonataClassificationBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -86,6 +89,8 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+
 sonata_user:
     security_acl: true
     manager_type: orm # can be orm or mongodb
@@ -131,6 +136,17 @@ sonata_media:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
 
+        news:
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 150 , quality: 95}
+                big:   { width: 500 , quality: 90}
+        
+
     cdn:
         server:
             path: /uploads/media # http://media.sonata-project.org/
@@ -150,3 +166,45 @@ sonata_media:
         gallery: Application\Sonata\MediaBundle\Entity\Gallery
         gallery_has_media: Application\Sonata\MediaBundle\Entity\GalleryHasMedia        
          
+sonata_news:
+    title:        Sonata Project
+    link:         https://sonata-project.org
+    description:  Cool bundles on top of Symfony2
+    salt:         'secureToken'
+    permalink_generator: sonata.news.permalink.date # sonata.news.permalink.collection
+
+    comment:
+        notification:
+            emails:   [email@example.org, email2@example.org]
+            from:     no-reply@sonata-project.org
+            template: '@SonataNews/Mail/comment_notification.txt.twig'
+
+sonata_formatter:
+    formatters:
+        markdown:
+            service: sonata.formatter.text.markdown
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        text:
+            service: sonata.formatter.text.text
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        rawhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        richhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
