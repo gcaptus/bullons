@@ -11,12 +11,10 @@ security:
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         fos_userbundle:
-            id: fos_user.user_manager
-        
-
+            id: fos_user.user_provider.username
 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
+        # Disabling the security for the web debug toolbar, the profiler and Assetic.
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -34,7 +32,7 @@ security:
             logout:
                 path:           /admin/logout
                 target:         /admin/login
-            anonymous:          true
+            anonymous:          true    
 
         # -> end custom configuration
 
@@ -45,16 +43,14 @@ security:
         main:
             pattern:             .*
             context:             user
-            #user_checker: fos_user.user_checker
             form_login:
-                provider: fos_userbundle
+                provider:       fos_userbundle
                 login_path:     /login
                 use_forward:    false
                 check_path:     /login_check
                 failure_path:   null
-                csrf_token_generator: security.csrf.token_manager
-            logout:       true
-            anonymous:    true
+            logout:             true
+            anonymous:          true
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
@@ -64,11 +60,6 @@ security:
             #form_login: ~
 
     access_control:
-        # URL of FOSUserBundle which need to be available to anonymous users
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-
         # Admin login page needs to be accessed without credential
         - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
@@ -85,4 +76,5 @@ security:
         FOS\UserBundle\Model\UserInterface: sha512
 
     acl:
-        connection: default        
+        connection: default
+                
