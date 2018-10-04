@@ -208,3 +208,11 @@ sonata_formatter:
                 - sonata.formatter.twig.control_flow
                 - sonata.formatter.twig.gist
                 - sonata.media.formatter.twig
+
+fos_ck_editor: 
+    default_config: my_config 
+    configs: 
+        my_config: 
+            toolbar: full 
+        news: 
+            toolbar: full
