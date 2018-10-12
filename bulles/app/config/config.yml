@@ -145,6 +145,7 @@ sonata_media:
             formats:
                 small: { width: 150 , quality: 95}
                 big:   { width: 500 , quality: 90}
+                large: { width: 800 , quality: 100}
         
 
     cdn:
