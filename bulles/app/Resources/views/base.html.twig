@@ -98,62 +98,74 @@
         {% endblock %}
         <!--Footer-->
         <footer>
-            <div id="alcohol">
-                L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
-            </div><br>   
-            <div class="d-flex align-content-end justify-space-between">
-                <div class="col-sm-4 ">
-                    <p>
-                    <b><a href="#">About us</a></b>
-                    </p>
-                    <p>
-                    <b><a href="#">Politique de confidentialité</a></b>
-                    </p>
-                    <p>
-                    <b><a href="#">Contact</a></b>
-                    </p>
-                    <p>
-                    <b><a href="#">Legal mentions</a></b>
-                    </p>
-                        
+            <div class="container">
+                <div id="alcohol">
+                    L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+                </div><br>   
+                <div class="row">
+                    <div class="row middle-footer">
+                        <div class="col-sm-4 ">
+                            <p>
+                            <b><a href="#">About us</a></b>
+                            </p>
+                            <p>
+                            <b><a href="#">Politique de confidentialité</a></b>
+                            </p>
+                            <p>
+                            <b><a href="#">Contact</a></b>
+                            </p>
+                            <p>
+                            <b><a href="#">Legal mentions</a></b>
+                            </p>
+                                
+                        </div>
+                        <div class="col-sm-4">
+                            <b><p>
+                                 Contact
+                            </p></b>
+                            <span><i class="fas fa-at"></i></span><br>
+                            <span><i class="fas fa-phone"></i></span><br>
+                            <span><i class="fas fa-envelope-square"></i></span><br>
+                        </div>
+                        <div class="col-sm-4" id="social-icons">
+                            <div class="float-right">
+                            
+                                <a href="https://www.youtube.com/">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            
+                                <a href="https://fr-fr.facebook.com">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            
+                                <a href="https://twitter.com/?lang=fr">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            
+                                <a href="https://fr.linkedin.com/">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div> 
                 </div>
-                <div class="col-sm-4">
-                    <b><p>
-                         Contact
-                    </p></b>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    © 2018
                 </div>
-                <div class="col-sm-4" id="social-icons">
-                    <div class="float-right">
-                    
-                        <a href="https://www.youtube.com/">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    
-                        <a href="https://fr-fr.facebook.com">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    
-                        <a href="https://twitter.com/?lang=fr">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    
-                        <a href="https://fr.linkedin.com/">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-            </div> 
+            </div>
         </footer>
         <!--Footer-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         {% block javascripts %}
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
         {% endblock %}
     </body>
 </html>
