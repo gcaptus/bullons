@@ -46,11 +46,13 @@
                    
                 </div>
             </header>
-            <div class="post-img col-lg-4">
-                    {% media post.image, 'small' %}
-            </div>
-            <div class="sonata-blog-post-abtract">
-                {{ post.abstract }}
+            <div class="row row-archive">
+                <div class="post-img col-lg-4">
+                        {% media post.image, 'small' %}
+                </div>
+                <div class="sonata-blog-post-abtract">
+                    {{ post.abstract }}
+                </div>
             </div>
              <div class="sonata-blog-post-tags">
                 {% if post.tags|length > 1 %}

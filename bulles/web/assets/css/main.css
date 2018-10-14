@@ -83,6 +83,11 @@ footer a:hover {
 /*end register-content.html.twig*/
 
 /*login-content.html.twig*/
+.log-title{
+  display: flex;
+  justify-content: center;
+}
+
 .container-login{
   display: flex;
   justify-content: center;
@@ -91,6 +96,7 @@ footer a:hover {
 .row-login{
   display: flex;
   flex-direction: column;
+  align-items: center;
 
 }
 
@@ -165,7 +171,9 @@ footer a:hover {
   display: flex;
   justify-content: stretch;
 }
-
+.sonata-blog-post-container{
+  margin: 30px;
+}
 .post-content{
 
 }
@@ -176,6 +184,10 @@ footer a:hover {
 .sonata-blog-post-tags{
   font-size: 12px;
 }
+.sonata-blog-post-abtract{
+  display: flex;
+  align-items: center;
+}
 /*end news:Post:archive.html.twig*/
 /*END POST*/
 
@@ -184,6 +196,7 @@ footer a:hover {
 .wrap-profile{
   display: flex;
   justify-content: center;
+  margin:50px;
 }
 
 .fos_user_user_show{
@@ -194,8 +207,26 @@ footer a:hover {
 /*end profile:show_content.html.twig*/
 /*END FOSUser*/
 
+/*about.html.twig*/
+.index-presentation-container{
+  margin:50px;
+}
+/*end about.html.twig*/
+
+/*legal.html.twig*/
+.legal-content{
+  margin: 30px;
+}
+/*end legal.html.twig*/
+
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrap-profile {
+    margin:300px;
   }
 }

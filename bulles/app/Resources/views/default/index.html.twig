@@ -1,32 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{#{% block body %}
 			&nbsp;<br>
             &nbsp;<br>
             &nbsp;<br>
 
-<div class="index-presentation-container">
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-
-		<div class="index-presentation">
-			<p> Ce site a pour but de partager des expériences zythologiques (à notre niveau), sans s'embêter avec des notes par trop subjectives.</p> 
-			<p>Mais pourquoi utiliser un site internet pour ça? Mon frère habite pas à coté<br> <img src="{{asset('assets/img/distance.png')}}"> <br> Et bien j'en avais un poil marre d'envoyer des sms à mon petit frère après chaque nouvelle bière pour lui dire ce que j'en pensait</p>
-			<p>Celà nous permets de pouvoir petit à petit progresser en bièrologie mais aussi de faire travailler notre mémoire (gustative et olfactive surtout). </p>
-		</div>
-            
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-</div>
-			&nbsp;<br>
+{{ render(controller('SonataNewsBundle:Post:archiveYearly', { year : 2018, request : app.request } )) }}		&nbsp;<br>
             &nbsp;<br>
             &nbsp;<br>
 
-{% endblock %}
+{% endblock %}#}
+
 
 {% block stylesheets %}
-<style>
-</style>
+
 {% endblock %}

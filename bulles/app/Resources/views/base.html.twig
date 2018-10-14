@@ -19,18 +19,25 @@
 
     </head>
     <body>
+
         <header>
             <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
               <div class="container">
-                <a class="navbar-brand" href="#">Bullons</a>
+                <a class="navbar-brand" href="/">Bullons</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
+                {# barre search with function search not implemented 
+                <div class="search-bar"><a class="navbar-brand" href="/"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
+                {{ form_start(form, { 'attr': {'action': path('results')} }) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+                </div>#}
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="#"><i class="fas fa-home"> </i>Home
+                      <a class="nav-link" href="/news"><i class="fas fa-home"> </i>Bière
                         <span class="sr-only">(current)</span>
                       </a>
                     </li>
@@ -43,12 +50,12 @@
                                 <button class="dropdown-item" type="button" href="/news/tag/blonde">Blonde</button>
                                 <button class="dropdown-item" type="button" href="/news/tag/brune">Brune</button>
                                 <button class="dropdown-item" type="button" href="/news/tag/blanche">Blanche</button>
-                                <button class="dropdown-item" type="button" href="/news/tag/ambree">Ambrée</button>
+                                <button class="dropdown-item" type="button" href="http://127.0.0.1:8000/news/tag/ambree">Ambrée</button>
                             </div>
                         </div>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/profile"> <i class="fas fa-user-circle"></i>Account</a>
+                      <a class="nav-link" href="/profile"> <i class="fas fa-user-circle"></i>Compte</a>
                     </li>
                     
                     <li class="nav-item">
@@ -106,16 +113,13 @@
                     <div class="row middle-footer">
                         <div class="col-sm-4 ">
                             <p>
-                            <b><a href="#">About us</a></b>
+                            <b><a href="/about">Qui sommes nous</a></b>
                             </p>
                             <p>
-                            <b><a href="#">Politique de confidentialité</a></b>
+                            <b><a href="/gdpr">Politique de confidentialité</a></b>
                             </p>
                             <p>
-                            <b><a href="#">Contact</a></b>
-                            </p>
-                            <p>
-                            <b><a href="#">Legal mentions</a></b>
+                            <b><a href="/legal">Mentions Légales</a></b>
                             </p>
                                 
                         </div>
@@ -123,9 +127,9 @@
                             <b><p>
                                  Contact
                             </p></b>
-                            <span><i class="fas fa-at"></i></span><br>
-                            <span><i class="fas fa-phone"></i></span><br>
-                            <span><i class="fas fa-envelope-square"></i></span><br>
+                            <span><i class="fas fa-at"></i>bullons@bullons.fr</span><br>
+                            <span><i class="fas fa-phone"></i>+(33) 123456789</span><br>
+                            <span><i class="fas fa-envelope-square"></i>4 rue du Dôme,<br> 6700 Strasbourg</span><br>
                         </div>
                         <div class="col-sm-4" id="social-icons">
                             <div class="float-right">
