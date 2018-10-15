@@ -19,7 +19,7 @@ footer {
   display: flex; 
   font-size: .9em;
   padding-bottom: 5px;
-  border-top: 3px solid #31813a;
+  border-top: 3px solid #31813a;*/
   background-color: #343A40;
   background:linear-gradient(#343A40, #b8b8b8);
   color: #333;
@@ -65,53 +65,7 @@ footer a:hover {
 /***********end index***********************/
 
 
-/*******************************register-content.html.twig*********************/
 
- 
-#blockRegister{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: justify;
-}
-
-#msgAlcohol{
-  color:red;
-  font-size: 10px;
-}
-
-#registerBtn{
-  display: flex;
-  justify-content: center;
-}
-/*************************end register-content.html.twig*********************/
-
-/**************************login-content.html.twig*************************/
-.login-content{
-  margin: 25%;
-}
-
-.log-title{
-  display: flex;
-  justify-content: center;
-}
-
-.container-login{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.row-login{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.login-input{
-  color: #343A40;
-}
-/**************************end login-content.html.twig*********************/
 
 /**********************************POST*************************************/
 /**************************Post:comments.html.twig**************************/
@@ -219,6 +173,29 @@ footer a:hover {
 /*END POST*/
 
 /*FOSUser*/
+
+/*******************************register-content.html.twig*********************/
+
+ 
+#blockRegister{
+  display: flex;
+  margin: 10%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: justify;
+}
+
+#msgAlcohol{
+  color:red;
+  font-size: 1.2em;
+}
+
+#registerBtn{
+  display: flex;
+  justify-content: center;
+}
+/*************************end register-content.html.twig*********************/
+
 /*profile:show_content.html.twig*/
 .wrap-profile{
   display: flex;
@@ -239,11 +216,44 @@ footer a:hover {
   
 }
 /*end profile:show_content.html.twig*/
+
+/**************************login-content.html.twig*************************/
+.login-content{
+  margin: 25%;
+}
+
+.log-title{
+  display: flex;
+  justify-content: center;
+}
+
+.container-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.login-input{
+  color: #343A40;
+}
+/**************************end login-content.html.twig*********************/
 /*END FOSUser*/
 
 /*about.html.twig*/
 .index-presentation-container{
   margin:50px;
+}
+
+.about-img{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.6em;
 }
 /*end about.html.twig*/
 

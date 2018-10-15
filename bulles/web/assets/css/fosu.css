@@ -1,0 +1,91 @@
+/*end base.html.twig*/
+html{
+  width:100%;
+}
+
+body {
+  height:100%;
+  margin: 0;
+  padding-top: 54px;
+  width:100%;
+  /*background-image: url('../img/220635-P1BIXU-982.jpg');*/
+  /*background-image: url('../img/beer-background-1.jpg');*/
+  background-image: url('../img/beer-mousse.jpg');
+  background-size: cover;
+  /*background-color: #fffafa;*/
+}
+
+/*FOSUser*/
+
+
+/*******************************register-content.html.twig*********************/
+
+ 
+#blockRegister{
+  display: flex;
+  margin: 10%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: justify;
+}
+
+#msgAlcohol{
+  color:red;
+  font-size: 1.2em;
+}
+
+#registerBtn{
+  display: flex;
+  justify-content: center;
+}
+/*************************end register-content.html.twig*********************/
+
+
+/*profile:show_content.html.twig*/
+.wrap-profile{
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  margin-left: 40%;
+    box-sizing: border-box;
+  margin-right:45%;
+  border: solid #ccc 10px;
+  text-align: center;
+  margin-bottom: 20%;
+  background-color: rgba(221, 221, 221, 0.5);
+}
+
+.fos_user_user_show{
+  display: flex;
+  flex-direction: column;
+  
+}
+/*end profile:show_content.html.twig*/
+
+/**************************login-content.html.twig*************************/
+.login-content{
+  margin: 25%;
+}
+
+.log-title{
+  display: flex;
+  justify-content: center;
+}
+
+.container-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.login-input{
+  color: #343A40;
+}
+/**************************end login-content.html.twig*********************/
+/*END FOSUser*/
