@@ -9,9 +9,12 @@ body {
   padding-top: 54px;
   width:100%;
   /*background-image: url('../img/220635-P1BIXU-982.jpg');*/
-  background-color: #fffafa;
+  /*background-image: url('../img/beer-background-1.jpg');*/
+  background-image: url('../img/beer-mousse.jpg');
+  background-size: cover;
+  /*background-color: #fffafa;*/
 }
-
+/*footer*/
 footer {
   display: flex; 
   font-size: .9em;
@@ -48,20 +51,21 @@ footer a:hover {
   align-content: flex-end;
   justify-content: space-between;
 }
+/*end footer*/
 
-/*end base.html.twig*/
+/*********************end base.html.twig***************/
 
-/*index*/
+/************index*************************/
 .index-presentation-container{
   height:100%;
   display: flex;
   align-items: center;
   justify-content: center; 
 }
-/*end index*/
+/***********end index***********************/
 
 
-/*register-content.html.twig*/
+/*******************************register-content.html.twig*********************/
 
  
 #blockRegister{
@@ -80,9 +84,13 @@ footer a:hover {
   display: flex;
   justify-content: center;
 }
-/*end register-content.html.twig*/
+/*************************end register-content.html.twig*********************/
 
-/*login-content.html.twig*/
+/**************************login-content.html.twig*************************/
+.login-content{
+  margin: 25%;
+}
+
 .log-title{
   display: flex;
   justify-content: center;
@@ -103,22 +111,26 @@ footer a:hover {
 .login-input{
   color: #343A40;
 }
-/*end login-content.html.twig*/
+/**************************end login-content.html.twig*********************/
 
-/*POST*/
-/*Post:comments.html.twig*/
+/**********************************POST*************************************/
+/**************************Post:comments.html.twig**************************/
+.sonata-blog-comment-container{
+
+}
+
 .blog-comment{
   border:1px solid #ccc;
   color:#4B3621;
   background-color: #ddd;
-  margin-bottom: 1em;
+  margin: 10%;
 }
 
 .header-comment{
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  background-color: #ccc;
+  background-color: rgba(204, 204, 204, 0.5);
 }
 
 .sonata-blog-comment-name{
@@ -131,20 +143,22 @@ footer a:hover {
 }
 
 .sonata-blog-comment-message{
-  background-color: #ddd;
+  background-color: rgba(221, 221, 221, 0.5);
   color: #000;
   padding: 6px;
 }
-/*end Post:comments.html.twig*/
+/**************************end Post:comments.html.twig********************/
 
-
-/*Post:comment_form.html.twig*/
+/**************************Post:comment_form.html.twig*******************/
 .commentForm{
   display: flex;
   justify-content: center;
+  margin: 10%;
+  background-color: rgba(218, 239, 236, 0.5);
+  border-radius: 5%;
 }
 
-/*end Post:comment_form.html.twig*/
+/******************end Post:comment_form.html.twig*********************/
 
 
 /*News:Post:view.html.twig*/
@@ -162,31 +176,44 @@ footer a:hover {
   border-color: black;
 
 }
+.sonata-blog-post-container{
+  margin: 30px;
+}
 
 .sonata-blog-post-title{
   display: flex;
   justify-content: center;
 }
+
 .sonata-blog-post-content{
   display: flex;
   justify-content: stretch;
+  background-color: rgba(218, 239, 236, 0.5);
+  border-radius: 5%;
 }
-.sonata-blog-post-container{
-  margin: 30px;
-}
-.post-content{
 
+.post-content{
+  align-items: stretch;
 }
 /*end news:Post:view.html.twig*/
 
 
 /*news:Post:archive.html.twig*/
+.sonata-blog-post-list{
+  margin: 5%;
+}
+
 .sonata-blog-post-tags{
   font-size: 12px;
 }
 .sonata-blog-post-abtract{
   display: flex;
   align-items: center;
+}
+
+.pager{
+  display: flex;
+  justify-content: space-between;
 }
 /*end news:Post:archive.html.twig*/
 /*END POST*/
@@ -196,7 +223,14 @@ footer a:hover {
 .wrap-profile{
   display: flex;
   justify-content: center;
-  margin:50px;
+  margin-top: 20%;
+  margin-left: 40%;
+    box-sizing: border-box;
+  margin-right:45%;
+  border: solid #ccc 10px;
+  text-align: center;
+  margin-bottom: 20%;
+  background-color: rgba(221, 221, 221, 0.5);
 }
 
 .fos_user_user_show{
@@ -225,8 +259,4 @@ footer a:hover {
   }
 }
 
-@media (min-width: 992px) {
-  .wrap-profile {
-    margin:300px;
-  }
 }

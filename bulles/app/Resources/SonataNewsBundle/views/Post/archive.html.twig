@@ -73,9 +73,9 @@
         {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
     {% endfor %}
 
-    <ul class="pager">
-        <li{% if pager.page == pager.firstPage %} class="disabled"{% endif %}><a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}" title="{{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}">{{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}</a>
-        <li{% if pager.page == pager.lastPage %} class="disabled"{% endif %}><a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}" title="{{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}">{{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}</a></li>
-    </ul>
+    <div class="pager">
+        <span{% if pager.page == pager.firstPage %} class="disabled"{% endif %}><a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}" title="{{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}"><i class="fas fa-chevron-left"></i>&nbsp;{{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}</a></span>
+        <span{% if pager.page == pager.lastPage %} class="disabled"{% endif %}><a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}" title="{{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}">{{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}&nbsp;<i class="fas fa-chevron-right"></i></a></span>
+    </div>
 </div>
 {% endblock %}

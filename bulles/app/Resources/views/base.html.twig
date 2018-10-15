@@ -8,19 +8,20 @@
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
             <link rel="stylesheet" type="text/css" href=" {{asset('assets/css/main.css')}} ">
+            <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}" />
         {% endblock %}
-            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            {#<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
             <link rel="stylesheet" type="text/css" href=" {{asset('assets/css/main.css')}} ">
-        
-        
-
-        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}" />
+            <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}" />#}
 
     </head>
     <body>
 
         <header>
+            {% block header %}
+                
+            
             <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
               <div class="container">
@@ -28,12 +29,21 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-                {# barre search with function search not implemented 
-                <div class="search-bar"><a class="navbar-brand" href="/"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
-                {{ form_start(form, { 'attr': {'action': path('results')} }) }}
-                {{ form_widget(form) }}
-                {{ form_end(form) }}
-                </div>#}
+
+                <!--search-->
+                <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="recherche" />
+                    <span class="input-group-btn">
+                        <a class="btn btn-secondary" type="button" href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </span>
+                </div>
+                </div>
+                <!--end search-->
+
+                <!--responsive burger-->
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
@@ -47,26 +57,37 @@
                             <i class="fas fa-beer"></i>Type
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button" href="/news/tag/blonde">Blonde</button>
-                                <button class="dropdown-item" type="button" href="/news/tag/brune">Brune</button>
-                                <button class="dropdown-item" type="button" href="/news/tag/blanche">Blanche</button>
-                                <button class="dropdown-item" type="button" href="http://127.0.0.1:8000/news/tag/ambree">Ambrée</button>
+                                <a class="dropdown-item" role="button" href="http://127.0.0.1:8000/news/tag/blonde">Blonde</a>
+                                <a class="dropdown-item" role="button" href="http://127.0.0.1:8000/news/tag/brune">Brune</a>
+                                <a class="dropdown-item" role="button" href="http://127.0.0.1:8000/news/tag/blanche">Blanche</a>
+                                <a class="dropdown-item" role="button" href="http://127.0.0.1:8000/news/tag/ambree">Ambrée</a>
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/profile"> <i class="fas fa-user-circle"></i>Compte</a>
-                    </li>
+                    {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile"> <i class="fas fa-user-circle"></i>Compte</a>
+                        </li>
+                
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ path('fos_user_security_logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register"><i class="fas fa-clipboard-list"></i>S'inscrire</a>
+                        </li>
+                
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ path('fos_user_security_login') }}"><i class="fas fa-sign-in-alt"></i>LogIn</a>
+                    {%endif%}
                     
-                    <li class="nav-item">
-                      <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
-                    </li>
                   </ul>
                 </div>
+                <!-- end responsive burger-->
               </div>
             </nav>
             <!-- end Navigation -->
-
+            {% endblock %}
         </header>
 
         {% block body %}
@@ -103,15 +124,20 @@
         {% block FOSUser %}
 
         {% endblock %}
+
+        {% block index%}
+             
+        {% endblock %}
         <!--Footer-->
         <footer>
-            <div class="container">
+            {% block footer %}
+            <div class="container container-footer">
                 <div id="alcohol">
                     L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
                 </div><br>   
                 <div class="row">
                     <div class="row middle-footer">
-                        <div class="col-sm-4 ">
+                        <div class="col-lg-4 ">
                             <p>
                             <b><a href="/about">Qui sommes nous</a></b>
                             </p>
@@ -123,15 +149,15 @@
                             </p>
                                 
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-lg-4">
                             <b><p>
                                  Contact
                             </p></b>
                             <span><i class="fas fa-at"></i>bullons@bullons.fr</span><br>
                             <span><i class="fas fa-phone"></i>+(33) 123456789</span><br>
-                            <span><i class="fas fa-envelope-square"></i>4 rue du Dôme,<br> 6700 Strasbourg</span><br>
+                            <span><i class="fas fa-envelope-square"></i>4 rue du Dôme,<br> 67000 Strasbourg</span><br>
                         </div>
-                        <div class="col-sm-4" id="social-icons">
+                        <div class="col-lg-4" id="social-icons">
                             <div class="float-right">
                             
                                 <a href="https://www.youtube.com/">
@@ -159,11 +185,14 @@
                     © 2018
                 </div>
             </div>
+            {% endblock %}
         </footer>
         <!--Footer-->
+        
+        {#
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>#}
 
         {% block javascripts %}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

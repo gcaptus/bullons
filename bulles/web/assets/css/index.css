@@ -1,0 +1,17 @@
+body{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	margin-top: 10%;
+}
+.index-content{}
+
+.alcohol{
+  color:red;
+  font-size:1.2em;
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
