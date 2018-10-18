@@ -64,7 +64,10 @@ body {
 
 /**************************login-content.html.twig*************************/
 .login-content{
-  margin: 25%;
+  margin: 20%;
+  margin-left: 35%;
+  margin-right: 35%;
+   background-color: #f8f8f8;
 }
 
 .log-title{
@@ -88,4 +91,16 @@ body {
   color: #343A40;
 }
 /**************************end login-content.html.twig*********************/
+
+
+/**************************edit-content.html.twig*********************/
+.block-edit{
+  margin: 20%;
+  margin-left: 35%;
+  margin-right: 35%;
+   background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+}
+/**************************end edit-content.html.twig*********************/
 /*END FOSUser*/

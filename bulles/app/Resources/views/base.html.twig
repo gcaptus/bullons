@@ -25,7 +25,7 @@
             <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
               <div class="container">
-                <a class="navbar-brand" href="/about">Bullons</a>
+                <a class="navbar-brand" href="/index">Bullons</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -47,14 +47,14 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="/news"><i class="fas fa-home"> </i>Bière
+                      <a class="nav-link" href="/news"><i class="fas fa-beer"></i>&nbsp;Bière
                         <span class="sr-only">(current)</span>
                       </a>
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
                             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-beer"></i>Type
+                            <i class="fas fa-clipboard-list"></i>&nbsp;Type
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <a class="dropdown-item" role="button" href="http://127.0.0.1:8000/news/tag/blonde">Blonde</a>
@@ -64,21 +64,26 @@
                             </div>
                         </div>
                     </li>
+                    {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SONATA_ADMIN") %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin"><i class="fas fa-toolbox"></i>&nbsp;Admin</a>
+                        </li>
+                    {%endif%}
                     {% if is_granted("IS_AUTHENTICATED_FULLY") %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/profile"> <i class="fas fa-user-circle"></i>Compte</a>
+                            <a class="nav-link" href="/profile"> <i class="fas fa-user-circle"></i>&nbsp;Compte</a>
                         </li>
                 
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ path('fos_user_security_logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                          <a class="nav-link" href="{{ path('fos_user_security_logout') }}"><i class="fas fa-sign-out-alt"></i>&nbsp;Quitter</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/register"><i class="fas fa-clipboard-list"></i>S'inscrire</a>
+                            <a class="nav-link" href="/register"><i class="fas fa-clipboard-list"></i>&nbsp;S'inscrire</a>
                         </li>
                 
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ path('fos_user_security_login') }}"><i class="fas fa-sign-in-alt"></i>LogIn</a>
+                          <a class="nav-link" href="{{ path('fos_user_security_login') }}"><i class="fas fa-sign-in-alt"></i>&nbsp;Se loguer</a>
                     {%endif%}
                     
                   </ul>
@@ -91,28 +96,7 @@
         </header>
 
         {% block body %}
-            <h1>Bullons ensemble</h1>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
             
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
-            &nbsp;<br>
         {% endblock %}
         {% block article %}
             
@@ -132,59 +116,57 @@
         <footer>
             {% block footer %}
             <div class="container container-footer">
-                <div id="alcohol">
-                    L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+                <div class="row" id="alcohol">
+                    <p>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
                 </div><br>   
-                <div class="row">
-                    <div class="row middle-footer">
-                        <div class="col-lg-4 ">
-                            <p>
-                            <b><a href="/about">Qui sommes nous</a></b>
-                            </p>
-                            <p>
-                            <b><a href="/gdpr">Politique de confidentialité</a></b>
-                            </p>
-                            <p>
-                            <b><a href="/legal">Mentions Légales</a></b>
-                            </p>
-                                
-                        </div>
-                        <div class="col-lg-4">
-                            <b><p>
-                                 Contact
-                            </p></b>
-                            <span><i class="fas fa-at"></i>bullons@bullons.fr</span><br>
-                            <span><i class="fas fa-phone"></i>+(33) 123456789</span><br>
-                            <span><i class="fas fa-envelope-square"></i>4 rue du Dôme,<br> 67000 Strasbourg</span><br>
-                        </div>
-                        <div class="col-lg-4" id="social-icons">
-                            <div class="float-right">
+                <div class="row middle-footer">
+                    <div class="col-lg-5 ">
+                        <p>
+                        <b><a href="/about">Qui sommes nous</a></b>
+                        </p>
+                        <p>
+                        <b><a href="/gdpr">Politique de confidentialité</a></b>
+                        </p>
+                        <p>
+                        <b><a href="/legal">Mentions Légales</a></b>
+                        </p>
                             
-                                <a href="https://www.youtube.com/">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            
-                                <a href="https://fr-fr.facebook.com">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            
-                                <a href="https://twitter.com/?lang=fr">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            
-                                <a href="https://fr.linkedin.com/">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div> 
+                    </div>
+                    <div class="col-lg-5">
+                        <b><p>
+                             Contact
+                        </p></b>
+                        <span><i class="fas fa-at"></i>bullons@bullons.fr</span><br>
+                        <span><i class="fas fa-phone"></i>+(33) 123456789</span><br>
+                        <span><i class="fas fa-envelope-square"></i>4 rue du Dôme,<br> 67000 Strasbourg</span><br>
+                    </div>
+                    <div class="col-lg-2" id="social-icons">
+                        
+                        
+                            <a href="https://www.youtube.com/">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        
+                            <a href="https://fr-fr.facebook.com">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        
+                            <a href="https://twitter.com/?lang=fr">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        
+                            <a href="https://fr.linkedin.com/">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+                <div class="row copyright-footer">
+                    © 2018 bullons
                 </div>
             </div>
-            <div class="container">
-                <div class="row text-center">
-                    © 2018
-                </div>
-            </div>
+               
+            
             {% endblock %}
         </footer>
         <!--Footer-->
