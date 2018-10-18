@@ -1,15 +1,16 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div id="blockRegister">
-
+	<div class="form-register">
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
     {{ form_widget(form) }}
+	</div>
     
     <div>
         <p id="msgAlcohol">En cliquant sur le bouton "Register" je certifie avoir l'age légal pour consommer de l'alcool</p>
     </div>
     <div id="registerBtn">
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        <input type="submit" class="btn btn-dark" value="{{ 'registration.submit'|trans }}" />
     </div>
 </div>
    

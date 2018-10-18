@@ -24,9 +24,11 @@ body {
 #blockRegister{
   display: flex;
   margin: 10%;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: justify;
+  background-color: rgba(221, 221, 221, 0.5);
 }
 
 #msgAlcohol{
@@ -35,6 +37,10 @@ body {
 }
 
 #registerBtn{
+  display: flex;
+  justify-content: center;
+}
+.form-register{
   display: flex;
   justify-content: center;
 }
